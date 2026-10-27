@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    <h1 align = "center"> 
+        registrtion Form
+    </h1>
+    <form align = "center" id="registrationForm" onsubmit="return validateForm()">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required>
+        <br><br>
+        <label for="phonenum">Phone Number</label>
+        <input type="tel" id="phonenum" required><br><br>
+        <label for="event">Course</label>
+        <select id="event">
+            <option >Choose a course</option>
+            <option >CSE - AI/ML</option>
+            <option >CSE - Data Analyst</option>
+            <option >MlOps</option>
+            <option >DevOps</option>
+        </select><br><br>
+        <button type="submit">Submit Form</button>
+    </form>
+    <script>
+        function validateForm() {
+            const phn = document.getElementById('phonenum').value;
+            if (phn.length === 10 && /^\d+$/.test(phn)) {
+                alert('Registration Successful!');
+                return true;
+            }
+            else{
+                alert('Invalid phone number. Must be 10 digits.');
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
