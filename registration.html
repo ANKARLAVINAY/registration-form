@@ -27,7 +27,7 @@
     </form>
     <script>
         function validateForm() {
-            const phn = document.getElementById('phonenum').value;
+            var phn = document.getElementById('phonenum').value;
             if (phn.length === 10 && /^\d+$/.test(phn)) {
                 alert('Registration Successful!');
                 return true;
